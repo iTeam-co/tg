@@ -1234,7 +1234,7 @@ void lua_do_all (void) {
       p += 3;
       break;
     case lq_msg_channel:
-      tgl_do_send_message (TLS, lua_ptr[p + 1].peer_id, LUA_STR_ARG (p + 2), 256, NULL, lua_msg_cb, lua_ptr[p].ptr);
+      tgl_do_send_message (TLS, lua_ptr[p + 1].peer_id, LUA_STR_ARG (p + 2), TGLMF_HTML, NULL, lua_msg_cb, lua_ptr[p].ptr);
       p += 3;
       break;
     case lq_send_typing:
@@ -1342,7 +1342,7 @@ void lua_do_all (void) {
       p += 2;
       break;
     case lq_reply:
-      tgl_do_reply_message (TLS, &lua_ptr[p + 1].msg_id, LUA_STR_ARG (p + 2), 0, lua_msg_cb, lua_ptr[p].ptr);
+      tgl_do_reply_message (TLS, &lua_ptr[p + 1].msg_id, LUA_STR_ARG (p + 2), TGLMF_HTML, lua_msg_cb, lua_ptr[p].ptr);
       p += 3;
       break;
     case lq_fwd:
